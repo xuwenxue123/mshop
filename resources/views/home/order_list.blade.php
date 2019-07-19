@@ -3,72 +3,57 @@
 @section('title', '前台')
 
 @section('content')	
-
-
-
-
-	<!-- end cart menu -->
-	
-	<!-- wishlist -->
-    <div class="wishlist section">
+	<!-- cart -->
+	<div class="cart section">
 		<div class="container">
 			<div class="pages-head">
-				<h3>WISHLIST</h3>
+				<h3>订单列表</h3>
 			</div>
 			<div class="content">
+            @foreach($uid as $v)
 				<div class="cart-1">
-                
 					<div class="row">
 						<div class="col s5">
-							<h5>Image</h5>
+							<h5>订单编号</h5>
 						</div>
 						<div class="col s7">
-							<img src="{{$res['goods_pic']}}" alt="" width="100" height="50">
+                            <h5><a href="">{{$v->oid}}</a></h5>
 						</div>
 					</div>
 					<div class="row">
 						<div class="col s5">
-							<h5>Name</h5>
+							<h5>订单状态</h5>
 						</div>
 						<div class="col s7">
-							<h5><a href="">{{$res['goods_name']}}</a></h5>
-						</div>
-					</div>
-					
-					<div class="row">
-						<div class="col s5">
-							<h5>Price</h5>
-						</div>
-						<div class="col s7">
-							<h5>${{$res['goods_price']}}</h5>
+							<h5><a href="">{{$v->state}}</a></h5>
 						</div>
 					</div>
 					<div class="row">
 						<div class="col s5">
-							<h5>Action</h5>
+							<h5>订单金额</h5>
+						</div>
+						<div class="col s7">
+							<h5>{{$v->pay_money}}</h5>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col s5">
+							<h5>操作</h5>
 						</div>
 						<div class="col s7">
 							<h5><i class="fa fa-trash"></i></h5>
 						</div>
 					</div>
-					<div class="row">
-						<div class="col 12">
-							<!-- <button class="btn button-default">加入购物车</button> -->
-							<a href="{{url('buyCart')}}?id={{$res['id']}}" class="btn button-default">加入购物车</a>
-						
-						</div>
-					</div>
-                    
 				</div>
-		
-				</div>
+				@endforeach
 			</div>
+      
+			<button class="btn button-default">Process to Checkout</button>
 		</div>
 	</div>
-	<!-- end wishlist -->
+	<!-- end cart -->
 
 	<!-- loader -->
 	<div id="fakeLoader"></div>
 	<!-- end loader -->
-
 @endsection

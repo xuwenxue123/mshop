@@ -22,7 +22,9 @@ class LoginController extends Controller
             'name'=>$data['name'],
             'pwd'=>$data['pwd'],
         ]);
-        return redirect('home/login');
+        if($res){
+            return redirect('login');
+        }
     }
     
     //登录视图
@@ -34,20 +36,28 @@ class LoginController extends Controller
     //登录执行
     public function do_login(Request $request)
     {   
+        // $data = $request->session()->all();
+        // dd($data);
         $data=$request->all();
+        // dd($data);
         $name=$data['name'];
         $res=Index::where('name','=',$data['name'])->first();
         // $request->session()->put('name',$name);
-        // dd($request->session());
+        //dd($request->session());
         if($res){
-            if($res->pwd == $data['pwd']){
-                session(['name'=>$data['name']]);
+            if($res['pwd'] == $data['pwd']){
+                session([
+                    'id'=>$res['id'],
+                    'name'=>$res['name'],
+                 ]);
+              
                 return redirect('home/index_add');
             }else{
-                return redirect('home/login');
+                return redirect('login');
             }
         }else{
-                return redirect('home/login');
+                return redirect('login');
         }
     }
 }
+

@@ -65,7 +65,18 @@
                             
                         </ul>
                     </li>
-                    
+                    <li>    
+                        <a href="#"><i class="fa fa-desktop "></i>货物管理<span class="fa arrow"></span></a>
+                         <ul class="nav nav-second-level">
+                            <li>
+                                <a href="{{url('cargo_add')}}"><i class="fa fa-toggle-on"></i>货物添加</a>
+                            </li>
+                            <li>
+                                <a href="{{url('cargo_list')}}"><i class="fa fa-toggle-on"></i>货物列表</a>
+                            </li>
+                            
+                        </ul>
+                    </li>
                      <li>
                         <a href="#"><i class="fa fa-bicycle "></i>我是最棒滴 <span class="fa arrow"></span></a>
                          <ul class="nav nav-second-level">

@@ -105,7 +105,7 @@
 				@foreach($data as $v)
 				<div class="col s6">
 					<div class="content">
-					<a href="{{url('goods_detail')}}?id={{$v->id}}"><img src="{{$v->goods_pic}}" alt="">
+					<a href="{{url('wish')}}?id={{$v->id}}"><img src="{{$v->goods_pic}}" alt="">
 						<h6><a href="">{{$v->goods_name}}</a></h6>
 						<div class="price">
 							${{$v->goods_price}} <span>$28</span>

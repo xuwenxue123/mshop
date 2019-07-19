@@ -81,7 +81,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel  <marquee behavior="" direction=""><font color="red">世界无敌大美女</font></marquee>
+                    Laravel  <marquee behavior="" direction=""><font color="red">从天而降小仙女</font></marquee>
                 </div>
 
                 <div class="links">
